@@ -4,7 +4,7 @@ var angular = require('angular');
 
 angular
   .module('mwl.calendar')
-  .controller('MwlCalendarSlideBoxCtrl', function($scope, $timeout, calendarConfig, calendarEventTitle) {
+  .controller('MwlCalendarSlideBoxCtrl', function($scope, /*$timeout,*/ calendarConfig, calendarEventTitle) {
 
     var vm = this;
     vm.calendarConfig = calendarConfig;
@@ -13,9 +13,9 @@ angular
     vm.isCollapsed = true;
     $scope.$watch('vm.isOpen', function(isOpen) {
       //events must be populated first to set the element height before animation will work
-      $timeout(function() {
+      //$timeout(function() {
         vm.isCollapsed = !isOpen;
-      });
+      //});
     });
 
   })

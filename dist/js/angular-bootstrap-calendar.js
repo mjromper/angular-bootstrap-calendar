@@ -1013,7 +1013,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	angular
 	  .module('mwl.calendar')
-	  .controller('MwlCalendarSlideBoxCtrl', ["$scope", "$timeout", "calendarConfig", "calendarEventTitle", function($scope, $timeout, calendarConfig, calendarEventTitle) {
+	  .controller('MwlCalendarSlideBoxCtrl', ["$scope", "calendarConfig", "calendarEventTitle", function($scope, /*$timeout,*/ calendarConfig, calendarEventTitle) {
 
 	    var vm = this;
 	    vm.calendarConfig = calendarConfig;
@@ -1022,9 +1022,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    vm.isCollapsed = true;
 	    $scope.$watch('vm.isOpen', function(isOpen) {
 	      //events must be populated first to set the element height before animation will work
-	      $timeout(function() {
+	      //$timeout(function() {
 	        vm.isCollapsed = !isOpen;
-	      });
+	      //});
 	    });
 
 	  }])
